@@ -68,8 +68,6 @@ Put your customizations in `~/dotfiles-local` appended with `.local`:
 * `~/dotfiles-local/psqlrc.local` (we supply a blank `.psqlrc.local` to prevent `psql` from
   throwing an error, but you should overwrite the file with your own copy)
 * `~/dotfiles-local/tmux.conf.local`
-* `~/dotfiles-local/vimrc.local`
-* `~/dotfiles-local/vimrc.bundles.local`
 * `~/dotfiles-local/zshrc.local`
 * `~/dotfiles-local/zsh/configs/*`
 
@@ -88,13 +86,6 @@ Your `~/dotfiles-local/gitconfig.local` might look like this:
       name = Dan Croak
       email = dan@thoughtbot.com
 
-Your `~/dotfiles-local/vimrc.local` might look like this:
-
-    " Color scheme
-    colorscheme github
-    highlight NonText guibg=#060606
-    highlight Folded  guibg=#0A0A0A guifg=#9090D0
-
 To extend your `git` hooks, create executable scripts in
 `~/dotfiles-local/git_template.local/hooks/*` files.
 
@@ -104,11 +95,6 @@ Your `~/dotfiles-local/zshrc.local` might look like this:
     if which pyenv &>/dev/null ; then
       eval "$(pyenv init -)"
     fi
-
-Your `~/dotfiles-local/vimrc.bundles.local` might look like this:
-
-    Plug 'Lokaltog/vim-powerline'
-    Plug 'stephenmckinney/vim-solarized-powerline'
 
 zsh Configurations
 ------------------
@@ -140,40 +126,8 @@ can add the `virtualenv` file, another `keys`, and a third `chpwd`.
 
 The `~/dotfiles-local/zshrc.local` is loaded after `~/dotfiles-local/zsh/configs`.
 
-vim Configurations
-------------------
-
-Similarly to the zsh configuration directory as described above, vim
-automatically loads all files in the `~/dotfiles-local/vim/plugin` directory. This does not
-have the same `pre` or `post` subdirectory support that our `zshrc` has.
-
-This is an example `~/dotfiles-local/vim/plugin/c.vim`. It is loaded every time vim starts,
-regardless of the file name:
-
-    # Indent C programs according to BSD style(9)
-    set cinoptions=:0,t0,+4,(4
-    autocmd BufNewFile,BufRead *.[ch] setlocal sw=0 ts=8 noet
-
 What's in it?
 -------------
-
-[vim](http://www.vim.org/) configuration:
-
-* [Ctrl-P](https://github.com/kien/ctrlp.vim) for fuzzy file/buffer/tag finding.
-* [Rails.vim](https://github.com/tpope/vim-rails) for enhanced navigation of
-  Rails file structure via `gf` and `:A` (alternate), `:Rextract` partials,
-  `:Rinvert` migrations, etc.
-* Run many kinds of tests [from vim]([https://github.com/janko-m/vim-test)
-* Set `<leader>` to a single space.
-* Switch between the last two files with space-space.
-* Syntax highlighting for CoffeeScript, Textile, Cucumber, Haml, Markdown, and
-  HTML.
-* Use [Ag](https://github.com/ggreer/the_silver_searcher) instead of Grep when
-  available.
-* Map `<leader>ct` to re-index [Exuberant Ctags](http://ctags.sourceforge.net/).
-* Use [vim-mkdir](https://github.com/pbrisbin/vim-mkdir) for automatically
-  creating non-existing directories before writing the buffer.
-* Use [vim-plug](https://github.com/junegunn/vim-plug) to manage plugins.
 
 [tmux](http://robots.thoughtbot.com/a-tmux-crash-course)
 configuration:
@@ -208,7 +162,6 @@ Shell aliases and scripts:
 * `mcd` to make a directory and change into it.
 * `replace foo bar **/*.rb` to find and replace within a given list of files.
 * `tat` to attach to tmux session named the same as the current directory.
-* `v` for `$VISUAL`.
 
 Thanks
 ------
