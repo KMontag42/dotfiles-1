@@ -54,7 +54,7 @@ values."
             ruby-test-runner 'rspec)
      ruby-on-rails
      markdown
-     (javascript :variables tern-command '("node" "/Users/kmontag/.nvm/versions/node/v7.5.0/bin/tern"))
+     (javascript :variables tern-command '("node" "/home/kyle/.nvm/versions/node/v7.5.0/bin/tern"))
      react
      (org :variables
           org-enable-github-support t
