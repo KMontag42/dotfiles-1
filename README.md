@@ -14,8 +14,8 @@ Install
 -------
 
 Clone onto your laptop:
-
-    git clone git://github.com/thoughtbot/dotfiles.git ~/dotfiles
+    
+    git clone --recursive -j8 git@github.com:KMontag42/dotfiles.git ~/dotfiles
 
 (Or, [fork and keep your fork
 updated](http://robots.thoughtbot.com/keeping-a-github-fork-updated)).
