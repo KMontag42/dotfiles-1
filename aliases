@@ -17,5 +17,8 @@ alias r="rails"
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
+alias tls="tmux list-session"
+alias ta="tmux attach -t"
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local

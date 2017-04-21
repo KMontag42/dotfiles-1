@@ -90,6 +90,12 @@ export WORKSPACE=~/workspace
 # Setup Org Agenda files
 export ORG=$WORKSPACE/orgfiles
 
+# Setup Rails ENV
+export RAILS_ENV=development
+
+# Setup Core Host for GH
+export CORE_HOST=kmontag-uss-enterprise.i.sessionm.com
+
 # Setup NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
