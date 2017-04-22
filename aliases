@@ -20,5 +20,8 @@ alias path='echo $PATH | tr -s ":" "\n"'
 alias tls="tmux list-session"
 alias ta="tmux attach -t"
 
+# SessionM aliases
+alias jump="ssh -A jump01.iad.sessionm.com"
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
