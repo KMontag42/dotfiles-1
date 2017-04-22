@@ -17,8 +17,9 @@ alias r="rails"
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
-alias tls="tmux list-session"
-alias ta="tmux attach -t"
+alias tmls="tmux list-session"
+alias tma="tmux -2 attach -t $1"
+alias tmk="tmux kill-session -t $1"
 
 # SessionM aliases
 alias jump="ssh -A jump01.iad.sessionm.com"
