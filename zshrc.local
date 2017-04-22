@@ -4,4 +4,4 @@ export WORKSPACE=~/workspace
 # Setup Org Agenda files
 export ORG=$WORKSPACE/orgfiles
 
-export DEFAULT_USER=kmontag
+export DEFAULT_USER=kyle
