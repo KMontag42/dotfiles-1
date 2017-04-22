@@ -163,6 +163,17 @@ Shell aliases and scripts:
 * `replace foo bar **/*.rb` to find and replace within a given list of files.
 * `tat` to attach to tmux session named the same as the current directory.
 
+Automatically installs NVM if not already installed.
+
+Uses a custom ZSH theme:
+
+```zsh
+rvm:(ruby-2.3.1) nvm:(v7.5.0) ~/dotfiles>                master-!?
+```
+
+It will hide your username if you set the `DEFAULT_USER` environment variable
+in your `.zshrc.local` file.
+
 Thanks
 ------
 
