@@ -8,7 +8,7 @@ root: ~/workspace/work/greyhound
 # pre: sudo /etc/rc.d/mysqld start
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-# pre_window: rbenv shell 2.0.0-p247
+pre_window: export HIDE_MANAGER_INFO=true
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
@@ -26,19 +26,22 @@ root: ~/workspace/work/greyhound
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t greyhound
+post_window: clear
 
 windows:
   - rails:
-      layout: main-vertical
+      layout: tiled
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
         - core:
             - cd core
+            - clear
         - admin:
             - cd admin
+            - clear
         - ondemand:
             - cd ondemand
-        - echo 'workspace'
+            - clear
+        - clear

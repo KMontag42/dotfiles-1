@@ -20,6 +20,7 @@ alias path='echo $PATH | tr -s ":" "\n"'
 alias tmls="tmux list-session"
 alias tma="tmux -2 attach -t $1"
 alias tmk="tmux kill-session -t $1"
+alias mux="tmuxinator $1"
 
 # SessionM aliases
 alias jump="ssh -A jump01.iad.sessionm.com"

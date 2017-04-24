@@ -24,8 +24,14 @@ nvm_prompt() {
   echo "%{$fg_bold[blue]%}nvm:(%{$fg[green]%}$(nvm current)%{$fg_bold[blue]%})%{$reset_color%} "
 }
 
+manager_prompts() {
+  if [[ -z "$HIDE_MANAGER_INFO" ]]; then
+     echo "$(rvm_prompt)$(nvm_prompt)"
+  fi
+}
+
 local user_color='green'; [ $UID -eq 0 ] && user_color='red'
-PROMPT='%{$fg[$user_color]%}$(user_prompt)$(rvm_prompt)$(nvm_prompt)$(_fishy_collapsed_wd)%{$reset_color%}%(!.#.>) '
+PROMPT='%{$fg[$user_color]%}$(manager_prompts)$(_fishy_collapsed_wd)%{$reset_color%}%(!.#.>) '
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
 
 local return_status="%{$fg_bold[red]%}%(?..%?)%{$reset_color%}"
