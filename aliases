@@ -22,6 +22,12 @@ alias tma="tmux -2 attach -t $1"
 alias tmk="tmux kill-session -t $1"
 alias mux="tmuxinator $1"
 
+# Hide the rvm/nvm info
+alias hmi="export HIDE_MANAGER_INFO=true"
+
+# Show the rvm/nvm info
+alias smi="unset HIDE_MANAGER_INFO"
+
 # SessionM aliases
 alias jump="ssh -A jump01.iad.sessionm.com"
 

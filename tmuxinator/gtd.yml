@@ -1,5 +1,5 @@
-name: greyhound
-root: ~/workspace/work/greyhound
+name: gtd
+root: ~/workspace/orgfiles
 
 # Optional tmux socket
 # socket_name: foo
@@ -28,18 +28,10 @@ pre_window: export HIDE_MANAGER_INFO=true
 # Runs after everything. Use it to attach to tmux with custom options etc.
 
 windows:
-  - rails:
+  - gtd:
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - core:
-            - cd core
-            - clear
-        - admin:
-            - cd admin
-            - clear
-        - ondemand:
-            - cd ondemand
-            - clear
+        - emacs ./work.org

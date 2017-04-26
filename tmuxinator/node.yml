@@ -1,5 +1,12 @@
-name: greyhound
-root: ~/workspace/work/greyhound
+<%
+  dir_name = @args.first.split('/').last
+  if dir_name == '.' || dir_name == './'
+    dir_name = `basename $PWD`
+  end
+%>
+
+name: <%= dir_name %>
+root: <%= @args.first %>
 
 # Optional tmux socket
 # socket_name: foo
@@ -28,18 +35,14 @@ pre_window: export HIDE_MANAGER_INFO=true
 # Runs after everything. Use it to attach to tmux with custom options etc.
 
 windows:
-  - rails:
+  - app:
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - core:
-            - cd core
-            - clear
-        - admin:
-            - cd admin
-            - clear
-        - ondemand:
-            - cd ondemand
-            - clear
+        - emacs .
+        - yarn:
+            - yarn install
+            - yarn start
+        - c

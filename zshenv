@@ -1,5 +1,8 @@
 local _old_path="$PATH"
 
+# skip global compinit, should speed shit up a lot
+skip_global_compinit=1
+
 # Local config
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
 
