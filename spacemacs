@@ -39,11 +39,6 @@ values."
      lua
      shell-scripts
      yaml
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
      helm
      ;; auto-completion
      ;; better-defaults
@@ -54,7 +49,7 @@ values."
             ruby-test-runner 'rspec)
      ruby-on-rails
      markdown
-     (javascript :variables tern-command '("node" "/home/kyle/.nvm/versions/node/v7.5.0/bin/tern"))
+     javascript
      react
      (org :variables
           org-enable-github-support t
@@ -318,37 +313,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (global-set-key (kbd "s-=") 'spacemacs/scale-down-font)
-  (global-set-key (kbd "s-+") 'spacemacs/scale-up-font)
-  (setq clojure-enable-fancify-symbols t)
-  (setq org-reveal-root "reveal")
-  (setq org-agenda-custom-commands
-        '(("w" todo "WAITING" nil)
-          ("n" todo "NEXT" nil)
-          ("d" "Agenda + Next Actions" ((agenda) (todo "NEXT"))))
-        )
-  (setq org-todo-keywords '((type "TODO"
-                                  "MAYBE"
-                                  "WAITING"
-                                  "NEXT"
-                                  "IN PROGRESS"
-                                  "DONE")))
   (setq exec-path (append exec-path '("/usr/local/bin")))
-  (setq org-directory "~/workspace/orgfiles")
-  (setq org-mobile-inbox-for-pull "~/workspace/orgfiles/index.org")
-  (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
-
-  (defun ruby-process-region (ruby-code)
-    "Send the contents of region to command, kill the region, and replace it with the output of process"
-    (interactive "*sRuby Code: ")
-    (let ((start (if (>= (point) (mark))
-                     (point)
-                   (mark)))
-          (end (if (>= (point) (mark))
-                   (mark)
-                 (point))))
-      (call-process-region start end "/usr/bin/ruby" t t nil "-e" (concat "$_ = STDIN.read; " ruby-code))))
-  (global-set-key "\M-p" 'ruby-process-region)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -358,7 +323,6 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-agenda-files (quote ("~/workspace/orgfiles")))
  '(org-babel-load-languages (quote ((js . t) (ruby . t) (shell . t) (emacs-lisp . t))))
  '(package-selected-packages
    (quote

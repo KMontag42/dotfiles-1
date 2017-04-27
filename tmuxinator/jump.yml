@@ -1,0 +1,33 @@
+<%
+jump_windows = @args.map do |arg|
+  %{
+  - "#{arg}":
+      layout: main-vertical
+      panes:
+        - main:
+            - ssh -A jump01.iad.sessionm.com
+            - ssh -A #{arg}
+            - cd /product
+            - clear
+  }
+end
+
+windows_yaml = %{
+windows:
+  - jump-host:
+      layout: main-vertical
+      panes:
+        - main:
+            - ssh -A jump01.iad.sessionm.com
+            - cd /product
+            - clear
+#{ jump_windows.join "\n" }
+}
+%>
+
+name: sessionm-jump
+root: ~/workspace
+
+pre_window: ssh-add ~/.ssh/id_rsa
+
+<%= windows_yaml %>
