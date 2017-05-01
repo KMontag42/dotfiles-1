@@ -73,7 +73,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(org-jira)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -324,15 +324,8 @@ you should place your code here."
   (global-set-key (kbd "s-+") 'spacemacs/scale-up-font)
   (setq clojure-enable-fancify-symbols t)
   (setq org-reveal-root "reveal")
-  (setq org-agenda-custom-commands
-        '(("w" todo "WAITING" nil)
-          ("n" todo "NEXT" nil)
-          ("d" "Agenda + Next Actions" ((agenda) (todo "NEXT"))))
-        )
   (setq org-todo-keywords '((type "TODO"
-                                  "MAYBE"
                                   "WAITING"
-                                  "NEXT"
                                   "IN PROGRESS"
                                   "DONE")))
   (setq exec-path (append exec-path '("/usr/local/bin")))
@@ -340,17 +333,10 @@ you should place your code here."
   (setq org-mobile-inbox-for-pull "~/workspace/orgfiles/index.org")
   (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
 
-  (defun ruby-process-region (ruby-code)
-    "Send the contents of region to command, kill the region, and replace it with the output of process"
-    (interactive "*sRuby Code: ")
-    (let ((start (if (>= (point) (mark))
-                     (point)
-                   (mark)))
-          (end (if (>= (point) (mark))
-                   (mark)
-                 (point))))
-      (call-process-region start end "/usr/bin/ruby" t t nil "-e" (concat "$_ = STDIN.read; " ruby-code))))
-  (global-set-key "\M-p" 'ruby-process-region)
+  (global-evil-mc-mode 1)
+
+  (setq jiralib-url "https://sessionm.atlassian.net")
+  (setq org-jira-working-dir "~/workspace/orgfiles/jira")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -364,7 +350,7 @@ you should place your code here."
  '(org-babel-load-languages (quote ((js . t) (ruby . t) (shell . t) (emacs-lisp . t))))
  '(package-selected-packages
    (quote
-    (flycheck-pos-tip pos-tip flycheck vimrc-mode dactyl-mode clojure-snippets clj-refactor edn paredit peg cider-eval-sexp-fu cider seq queue clojure-mode unfill mwim org-jira winum fuzzy ac-ispell helm-company helm-c-yasnippet company-web web-completion-data company-tern dash-functional company-statistics company-shell company-go company auto-yasnippet auto-complete go-guru go-eldoc go-mode focus ox-twbs ox-reveal ox-gfm org-projectile org-present org-pomodoro alert log4e gntp org-download htmlize gnuplot lua-mode tern web-mode web-beautify tagedit slim-mode scss-mode sass-mode pug-mode mmm-mode markdown-toc markdown-mode livid-mode skewer-mode simple-httpd less-css-mode json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc helm-css-scss haml-mode gh-md emmet-mode coffee-mode insert-shebang fish-mode yaml-mode smeargle rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv projectile-rails rake inflections orgit org minitest magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link feature-mode evil-magit magit magit-popup git-commit with-editor chruby bundler inf-ruby ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build spacemacs-theme)))
+    (ox-jira flycheck-pos-tip pos-tip flycheck vimrc-mode dactyl-mode clojure-snippets clj-refactor edn paredit peg cider-eval-sexp-fu cider seq queue clojure-mode unfill mwim org-jira winum fuzzy ac-ispell helm-company helm-c-yasnippet company-web web-completion-data company-tern dash-functional company-statistics company-shell company-go company auto-yasnippet auto-complete go-guru go-eldoc go-mode focus ox-twbs ox-reveal ox-gfm org-projectile org-present org-pomodoro alert log4e gntp org-download htmlize gnuplot lua-mode tern web-mode web-beautify tagedit slim-mode scss-mode sass-mode pug-mode mmm-mode markdown-toc markdown-mode livid-mode skewer-mode simple-httpd less-css-mode json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc helm-css-scss haml-mode gh-md emmet-mode coffee-mode insert-shebang fish-mode yaml-mode smeargle rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv projectile-rails rake inflections orgit org minitest magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link feature-mode evil-magit magit magit-popup git-commit with-editor chruby bundler inf-ruby ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build spacemacs-theme)))
  '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
