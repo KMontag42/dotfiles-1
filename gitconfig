@@ -25,6 +25,3 @@
   autosquash = true
 [include]
   path = ~/.gitconfig.local
-[user]
-	name = Kyle Montag
-	email = thekylemontag@gmail.com
