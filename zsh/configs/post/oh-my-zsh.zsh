@@ -15,15 +15,18 @@ ZSH_THEME="spaceship"
 # THEME SETTINGS
 SPACESHIP_DIR_PREFIX="\u200b"
 SPACESHIP_RUBY_SYMBOL="\u200b"
+SPACESHIP_NODE_SYMBOL="\u200b"
+SPACESHIP_GIT_SYMBOL="\u200b"
 SPACESHIP_PROMPT_DEFAULT_PREFIX="\u200b"
 SPACESHIP_GIT_PREFIX="\u200b"
+SPACESHIP_NODE_PREFIX="\u200b"
 SPACESHIP_DIR_TRUNC=1
+SPACESHIP_TIME_SHOW=true
 
 SPACESHIP_PROMPT_ORDER=(
     time
     user
     host
-    dir
     git
     node
     ruby
@@ -31,6 +34,7 @@ SPACESHIP_PROMPT_ORDER=(
     swift
     golang
     line_sep
+    dir
     char
 )
 
