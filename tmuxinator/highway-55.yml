@@ -1,0 +1,16 @@
+name: highway-55
+root: ~/workspace/work/
+
+windows:
+  - frontend:
+      layout: main-vertical
+      panes:
+        - main:
+            - cd highway-55-frontend
+            - clear
+  - backend:
+      layout: main-vertical
+      panes:
+        - main:
+            - cd highway-55-backend
+            - clear
