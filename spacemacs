@@ -27,7 +27,7 @@ values."
    ;; If non-nil layers with lazy install support are lazy installed.
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '()
+   dotspacemacs-configuration-layer-path '("~/.emacs.d/private/")
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
@@ -68,6 +68,7 @@ values."
      ;;        shell-default-position 'bottom)
      ;; spell-checking
      syntax-checking
+     spacemacs-prettier
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
@@ -338,6 +339,15 @@ you should place your code here."
 
   (setq jiralib-url "https://sessionm.atlassian.net")
   (setq org-jira-working-dir "~/workspace/orgfiles/jira")
+
+  (setq-default
+   js2-basic-offset 2
+   css-indent-offset 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2
+   )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
