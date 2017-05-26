@@ -1,3 +1,8 @@
 #!/bin/sh
 
+if [[ -z $1 ]]; then
+  echo 'no starting SHA/tag provided'
+  exit 1
+fi
+
 git log --oneline --no-merges $1..HEAD

@@ -1,3 +1,8 @@
 #!/bin/sh
 
+if [[ -z $1 ]]; then
+    echo 'no author email provided'
+    exit 1
+fi
+
 git log --all --oneline --no-merges --author=$1
