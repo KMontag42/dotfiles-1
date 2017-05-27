@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     nginx
      csv
      javascript
      ruby
@@ -278,7 +279,7 @@ values."
    dotspacemacs-folding-method 'evil
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
-   dotspacemacs-smartparens-strict-mode nil
+   dotspacemacs-smartparens-strict-mode t
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
    ;; over any automatically added closing parenthesis, bracket, quote, etc…
    ;; This can be temporary disabled by pressing `C-q' before `)'. (default nil)
@@ -340,8 +341,16 @@ you should place your code here."
   (setq jiralib-url "https://sessionm.atlassian.net")
   (setq org-jira-working-dir "~/workspace/orgfiles/jira")
 
+  (setq prettier-args '(
+                        "--print-width" "100"
+                        "--semi" "false"
+                        "--single-quote"
+                        "--jsx-bracket-same-line"
+                        ))
   (setq-default
+   ;; js2-mode
    js2-basic-offset 2
+   ;; web-mode
    css-indent-offset 2
    web-mode-markup-indent-offset 2
    web-mode-css-indent-offset 2
