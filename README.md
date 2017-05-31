@@ -14,7 +14,7 @@ Install
 -------
 
 Clone onto your laptop:
-    
+
     git clone --recursive -j8 git@github.com:KMontag42/dotfiles.git ~/dotfiles
 
 (Or, [fork and keep your fork
@@ -55,7 +55,7 @@ any new files in the repository.
 Make your own customizations
 ----------------------------
 
-Create a directory for your personal customizations: 
+Create a directory for your personal customizations:
 
     mkdir ~/dotfiles-local
 
@@ -64,7 +64,6 @@ Put your customizations in `~/dotfiles-local` appended with `.local`:
 * `~/dotfiles-local/aliases.local`
 * `~/dotfiles-local/git_template.local/*`
 * `~/dotfiles-local/gitconfig.local`
-* `~/dotfiles-local/gvimrc.local`
 * `~/dotfiles-local/psqlrc.local` (we supply a blank `.psqlrc.local` to prevent `psql` from
   throwing an error, but you should overwrite the file with your own copy)
 * `~/dotfiles-local/tmux.conf.local`
@@ -129,6 +128,26 @@ The `~/dotfiles-local/zshrc.local` is loaded after `~/dotfiles-local/zsh/configs
 What's in it?
 -------------
 
+<<<<<<< HEAD
+=======
+[vim](http://www.vim.org/) configuration:
+
+* [Ctrl-P](https://github.com/kien/ctrlp.vim) for fuzzy file/buffer/tag finding.
+* [Rails.vim](https://github.com/tpope/vim-rails) for enhanced navigation of
+  Rails file structure via `gf` and `:A` (alternate), `:Rextract` partials,
+  `:Rinvert` migrations, etc.
+* Run many kinds of tests [from vim]([https://github.com/janko-m/vim-test)
+* Set `<leader>` to a single space.
+* Switch between the last two files with space-space.
+* Syntax highlighting for Markdown, HTML, JavaScript, Ruby, Go, Elixir, more.
+* Use [Ag](https://github.com/ggreer/the_silver_searcher) instead of Grep when
+  available.
+* Map `<leader>ct` to re-index [Exuberant Ctags](http://ctags.sourceforge.net/).
+* Use [vim-mkdir](https://github.com/pbrisbin/vim-mkdir) for automatically
+  creating non-existing directories before writing the buffer.
+* Use [vim-plug](https://github.com/junegunn/vim-plug) to manage plugins.
+
+>>>>>>> upstream/master
 [tmux](http://robots.thoughtbot.com/a-tmux-crash-course)
 configuration:
 
@@ -157,7 +176,6 @@ Shell aliases and scripts:
 
 * `b` for `bundle`.
 * `g` with no arguments is `git status` and with arguments acts like `git`.
-* `git-churn` to show churn for the files changed in the branch.
 * `migrate` for `rake db:migrate && rake db:rollback && rake db:migrate`.
 * `mcd` to make a directory and change into it.
 * `replace foo bar **/*.rb` to find and replace within a given list of files.
@@ -185,7 +203,7 @@ in this project.
 License
 -------
 
-dotfiles is copyright © 2009-2016 thoughtbot. It is free software, and may be
+dotfiles is copyright © 2009-2017 thoughtbot. It is free software, and may be
 redistributed under the terms specified in the [`LICENSE`] file.
 
 [`LICENSE`]: /LICENSE
