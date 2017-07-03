@@ -5,7 +5,7 @@ jump_windows = @args.map do |arg|
       layout: main-vertical
       panes:
         - main:
-            - ssh -A jump01.iad.sessionm.com
+            - ssh -A jump.sessionm.local
             - ssh -A #{arg}
             - cd /product
             - clear
@@ -18,7 +18,7 @@ windows:
       layout: main-vertical
       panes:
         - main:
-            - ssh -A jump01.iad.sessionm.com
+            - ssh -A jump.sessionm.local
             - cd /product
             - clear
 #{ jump_windows.join "\n" }

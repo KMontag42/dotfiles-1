@@ -8,7 +8,7 @@ root: ~/workspace/orgfiles
 # pre: sudo /etc/rc.d/mysqld start
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-pre_window: export HIDE_MANAGER_INFO=true
+# pre_window: export HIDE_MANAGER_INFO=true
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
@@ -34,4 +34,4 @@ windows:
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - emacs ./work.org
+        - emacsclient ./work.org

@@ -8,7 +8,7 @@ root: ~/workspace/work/greyhound
 # pre: sudo /etc/rc.d/mysqld start
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-pre_window: export HIDE_MANAGER_INFO=true
+# pre_window: export HIDE_MANAGER_INFO=true
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
@@ -28,18 +28,39 @@ pre_window: export HIDE_MANAGER_INFO=true
 # Runs after everything. Use it to attach to tmux with custom options etc.
 
 windows:
-  - rails:
+  - core:
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - core:
+        - server:
             - cd core
-            - clear
-        - admin:
+            - rails s
+        - editor:
+            - cd core
+            - emacsclient -t .
+  - admin:
+      layout: main-vertical
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
+        - server:
             - cd admin
-            - clear
-        - ondemand:
+            - rails s -p 3001
+        - editor:
+            - cd admin
+            - emacsclient -t .
+  - ondemand:
+      layout: main-vertical
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
+        - server:
             - cd ondemand
-            - clear
+            - rails s -p 3002
+        - editor:
+            - cd ondemand
+            - emacsclient -t .
