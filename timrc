@@ -15,7 +15,7 @@
 press_return=1
 
 # The command that executes when the normal countdown mode ends.
-timer_cmd="afplay ~/.tim/alarm.wav"
+timer_cmd="aplay -q ~/.tim/alarm.wav"
 # Should the $timer_cmd command loop until termination of Tim?
 timer_repeat_cmd=0
 
@@ -23,15 +23,15 @@ timer_repeat_cmd=0
 interval=15
 
 # The command that executes when the work period starts.
-work_cmd="afplay ~/.tim/work.wav"
+work_cmd="aplay -q ~/.tim/work.wav"
 # The command that executes when the break period starts.
-break_cmd="afplay ~/.tim/break.wav"
+break_cmd="aplay -q ~/.tim/break.wav"
 # The command that executes when the long break period starts. Used instead of
 # pomodoro_cmd under looped pomodoro mode.
-long_break_cmd="afplay ~/.tim/break.wav"
+long_break_cmd="aplay -q ~/.tim/break.wav"
 
 # The command that executes when the pomodoro session is completed.
-pomodoro_cmd="afplay ~/.tim/alarm.wav"
+pomodoro_cmd="aplay -q ~/.tim/alarm.wav"
 # Should the $pomodoro_cmd command loop until termination of Tim?
 pomodoro_repeat_cmd=0
 
