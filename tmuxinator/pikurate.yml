@@ -1,0 +1,24 @@
+name: pikurate
+root: ~/workspace/personal/pikurate
+
+windows:
+  - API:
+      layout: main-vertical
+      panes:
+        - server:
+            - cd api
+            - bundle install
+            - rails s -p 5200
+        - editor:
+            - cd api
+            - e -t .
+  - frontend:
+      layout: main-vertical
+      panes:
+        - server:
+            - cd frontend
+            - yarn install
+            - yarn dev
+        - editor:
+            - cd frontend
+            - e -t .

@@ -1,5 +1,10 @@
-name: gtd
-root: ~/workspace/org
+# ~/.tmuxinator/next-project.yml
+
+<% location = `pwd` %>
+<% project = `basename $PWD` %>
+
+name: <%= project %>
+root: <%= location %>
 
 # Optional tmux socket
 # socket_name: foo
@@ -8,7 +13,7 @@ root: ~/workspace/org
 # pre: sudo /etc/rc.d/mysqld start
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-# pre_window: export HIDE_MANAGER_INFO=true
+# pre_window: rbenv shell 2.0.0-p247
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
@@ -26,14 +31,10 @@ root: ~/workspace/org
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t next-project
 
 windows:
-  - gtd:
-      layout: main-vertical
-      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
-      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
-      # synchronize: after
-      panes:
-        - e -t ./index.org
-        - e -t ./today.org
-        - tim
+  - server:
+      - yarn dev
+  - workspace:
+      - clear
