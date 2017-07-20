@@ -28,5 +28,8 @@ alias hmi="export HIDE_MANAGER_INFO=true"
 # Show the rvm/nvm info
 alias smi="unset HIDE_MANAGER_INFO"
 
+# ZenBot stuff
+alias zbcmd="docker run --rm --link zenbot_mongodb_1:mongodb -it zenbot_server ./zenbot.sh"
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
