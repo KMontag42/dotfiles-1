@@ -353,10 +353,10 @@ you should place your code here."
 
   (setq prettier-args '(
                         "--print-width" "100"
-                        "--semi" "false"
-                        "--single-quote"
                         "--jsx-bracket-same-line"
                         ))
+  (add-hook 'js2-mode-hook 'prettier-js-mode)
+
   (setq-default
    ;; js2-mode
    js2-basic-offset 2
