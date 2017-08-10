@@ -1,5 +1,5 @@
 name: pikurate
-root: ~/workspace/personal/pikurate
+root: ~/workspace/pikurate
 
 windows:
   - API:
@@ -8,10 +8,13 @@ windows:
         - server:
             - cd api
             - bundle install
-            - rails s -p 5200
-        - editor:
+            - rails s -p 5001
+        - todo:
             - cd api
-            - e -t .
+            - e -t ./TODOs.org
+        - workspace:
+            - cd api
+            - clear
   - frontend:
       layout: main-vertical
       panes:
@@ -19,6 +22,9 @@ windows:
             - cd frontend
             - yarn install
             - yarn dev
-        - editor:
+        - todo:
             - cd frontend
-            - e -t .
+            - e -t ./TODOs.org
+        - workspace:
+            - cd frontend
+            - clear

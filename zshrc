@@ -54,3 +54,4 @@ export NVM_DIR="$HOME/.nvm"
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /home/kmontag/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /home/kmontag/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
+export GPG_TTY=$(tty)

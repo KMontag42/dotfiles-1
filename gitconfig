@@ -29,3 +29,7 @@
 [user]
 	email = kmontag@sessionm.com
 	name = Kyle Montag
+[gpg]
+	program = /usr/bin/krgpg
+[tag]
+	forceSignAnnotated = true
