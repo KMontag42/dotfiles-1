@@ -20,6 +20,7 @@
   ff = only
 [commit]
   template = ~/.gitmessage
+	gpgSign = true
 [fetch]
   prune = true
 [rebase]
@@ -29,3 +30,7 @@
 [user]
 	email = kmontag@sessionm.com
 	name = Kyle Montag
+[gpg]
+	program = /usr/bin/krgpg
+[tag]
+	forceSignAnnotated = true
