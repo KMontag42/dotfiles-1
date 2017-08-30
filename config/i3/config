@@ -134,7 +134,7 @@ exec google-chrome
 exec emacs25
 exec slack
 exec --no-startup-id nm-applet
-exec xautolock -time 5 -locker screenlock
+exec xautolock -time 5 -locker "~/.config/i3/screensaver.sh"
 exec --no-startup-id pnmixer
 
 # new_window config to drop title bar
@@ -147,7 +147,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-bindsym $mod+Shift+Escape exec gnome-screensaver-command -l
+bindsym $mod+Shift+Escape exec "~/.config/i3/screensaver.sh"
 
 # screenshots
 # Multi-screen screenshots with scrot

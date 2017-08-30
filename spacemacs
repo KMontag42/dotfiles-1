@@ -31,7 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     python
+     (python :variables python-enable-yapf-format-on-save t)
      nginx
      csv
      javascript
