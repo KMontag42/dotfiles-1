@@ -20,7 +20,7 @@
   ff = only
 [commit]
   template = ~/.gitmessage
-	gpgsign = false
+	gpgSign = true
 [fetch]
   prune = true
 [rebase]
@@ -28,7 +28,7 @@
 [include]
   path = ~/.gitconfig.local
 [user]
-	email = kmontag@sessionm.com
+	email = thekylemontag@gmail.com
 	name = Kyle Montag
 [gpg]
 	program = /usr/bin/krgpg
