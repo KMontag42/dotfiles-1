@@ -28,3 +28,17 @@ windows:
         - workspace:
             - cd frontend
             - clear
+        - css:
+            - cd css
+            - clear
+            - sass --watch main.scss:main.css
+  - admin:
+      layout: main-vertical
+      panes:
+        - server:
+            - cd admin
+            - yarn install
+            - yarn dev
+        - workspace:
+          - cd admin
+          - clear
