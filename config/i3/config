@@ -9,7 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod3
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -131,7 +131,7 @@ assign [class="^Slack"] $ws4
 # startup programs
 exec i3-sensible-terminal
 exec google-chrome
-exec emacs25
+exec "emacs25 --daemon && emacsclient -c"
 exec slack
 exec --no-startup-id nm-applet
 exec xautolock -time 5 -locker "~/.config/i3/screensaver.sh"
