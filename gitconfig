@@ -30,8 +30,6 @@
 [user]
 	email = thekylemontag@gmail.com
 	name = Kyle Montag
-[gpg]
-	program = /usr/local/bin/krgpg
 [tag]
 	forceSignAnnotated = true
 [magit]
