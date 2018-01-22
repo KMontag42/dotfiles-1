@@ -32,5 +32,4 @@ fi
 unset _old_path
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
-export GOENV_VERSION="1.8.3"
 eval "$(goenv init -)"
