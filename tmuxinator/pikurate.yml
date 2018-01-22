@@ -37,8 +37,7 @@ windows:
       panes:
         - server:
             - cd admin
-            - yarn install
-            - yarn dev
+            - rails s -p 4000
         - workspace:
           - cd admin
           - clear
