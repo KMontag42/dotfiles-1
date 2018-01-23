@@ -94,8 +94,8 @@ bindsym $mod+a focus parent
 
 # setup workspace names
 set $ws1 "1:&#xf120;"
-set $ws2 "2:&#xf268;"
-set $ws3 "3:"
+set $ws2 "2:"
+set $ws3 "3:&#xf268;"
 set $ws4 "4:&#xf198;"
 
 # switch to workspace

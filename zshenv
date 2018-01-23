@@ -30,6 +30,4 @@ MSG
 fi
 
 unset _old_path
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
+export PATH=$PATH:/usr/local/go/bin
