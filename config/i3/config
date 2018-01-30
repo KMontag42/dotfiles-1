@@ -124,8 +124,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # workspace assignments
 assign [class="^X-terminal-emulator"] $ws1
-assign [class="^Google-chrome"] $ws2
-assign [class="^Emacs"] $ws3
+assign [class="^Emacs"] $ws2
+assign [class="^Google-chrome"] $ws3
 assign [class="^Slack"] $ws4
 
 # startup programs
