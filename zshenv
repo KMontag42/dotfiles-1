@@ -30,4 +30,3 @@ MSG
 fi
 
 unset _old_path
-export PATH=$PATH:/usr/local/go/bin
