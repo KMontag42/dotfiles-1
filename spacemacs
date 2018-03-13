@@ -73,10 +73,10 @@ values."
      ;; spell-checking
      syntax-checking
      spacemacs-prettier
-     (wakatime :variables
-               wakatime-api-key  "e3d09815-41a7-4b67-ad28-bd03e10464ea"
-               ;; use the actual wakatime path
-               wakatime-cli-path "/home/kmontag/.local/bin/wakatime")
+     ;; (wakatime :variables
+     ;;           wakatime-api-key  "e3d09815-41a7-4b67-ad28-bd03e10464ea"
+     ;;           ;; use the actual wakatime path
+     ;;           wakatime-cli-path "/home/kmontag/.local/bin/wakatime")
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
@@ -94,7 +94,7 @@ values."
    dotspacemacs-excluded-packages '()
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
-   ;; `used-only' installs only explicitly used packages and uninstall any
+   ;; `used-only' installs only explicitlno worriesy used packages and uninstall any
    ;; unused packages as well as their unused dependencies.
    ;; `used-but-keep-unused' installs only the used packages but won't uninstall
    ;; them if they become unused. `all' installs *all* packages supported by
@@ -362,6 +362,9 @@ you should place your code here."
   (setq prettier-args '(
                         "--print-width" "100"
                         "--jsx-bracket-same-line"
+                        "--semi" "false"
+                        "--trailing-comma" "all"
+                        "--insert-pragma" "true"
                         ))
   (add-hook 'js2-mode-hook 'prettier-js-mode)
 
@@ -378,7 +381,7 @@ you should place your code here."
   (spacemacs/set-leader-keys
     dotspacemacs-emacs-command-key 'helm-M-x)
   (setq create-lockfiles nil)
-  (load "~/Downloads/org-mind-map.el")
+  ;; (load "~/Downloads/org-mind-map.el")
   (define-key evil-org-mode-map (kbd "M m") 'org-mind-map-write)
   )
 
