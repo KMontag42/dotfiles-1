@@ -151,10 +151,7 @@ bindsym $mod+Shift+Escape exec "~/.config/i3/screensaver.sh"
 
 # screenshots
 # Multi-screen screenshots with scrot
-bindsym $mod+p exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
-
-# OSX-like area selection screenshots
-bindsym $mod+Shift+p exec shutter -s
+bindsym $mod+p exec gyazo
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
