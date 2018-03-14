@@ -34,3 +34,5 @@
 	forceSignAnnotated = true
 [magit]
 	hideCampaign = true
+[gpg]
+	program = /usr/bin/krgpg
