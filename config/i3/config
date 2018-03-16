@@ -128,15 +128,6 @@ assign [class="^Emacs"] $ws2
 assign [class="^Google-chrome"] $ws3
 assign [class="^Slack"] $ws4
 
-# startup programs
-exec i3-sensible-terminal
-exec "google-chrome --proxy-pac-url=http://localhost:2000/proxy.pac"
-exec "emacs25 --daemon && emacsclient -c"
-exec slack
-exec --no-startup-id nm-applet
-exec xautolock -time 5 -locker "~/.config/i3/screensaver.sh"
-exec --no-startup-id pnmixer
-
 # new_window config to drop title bar
 new_window pixel 1
 
@@ -150,7 +141,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+Shift+Escape exec "~/.config/i3/screensaver.sh"
 
 # screenshots
-# Multi-screen screenshots with scrot
 bindsym $mod+p exec gyazo
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -178,3 +168,13 @@ client.focused #859900 #859900 #fdf6e3 #859900
 client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
 client.unfocused #073642 #073642 #93a1a1 #586e75
 client.urgent #d33682 #d33682 #fdf6e3 #dc322f
+
+# startup programs
+exec i3-sensible-terminal
+exec "google-chrome --proxy-pac-url=http://localhost:2000/proxy.pac"
+exec "emacs25 --daemon && emacsclient -c"
+exec slack
+exec --no-startup-id nm-applet
+exec xautolock -time 5 -locker "~/.config/i3/screensaver.sh"
+exec --no-startup-id pnmixer
+exec feh --bg-scale ~/Pictures/lisalisa.png
