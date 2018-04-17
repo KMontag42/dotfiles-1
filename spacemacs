@@ -89,6 +89,7 @@ values."
                                       (rufo :location (recipe :fetcher github :repo "aleandros/emacs-rufo"))
                                       org-jira
                                       (protobuf-mode :location (recipe :fetcher github :repo "google/protobuf" :files ("editors/protobuf-mode.el")))
+                                      doom-themes
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -162,7 +163,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(misterioso
+   dotspacemacs-themes '(doom-one
                          spacemacs-dark
                          spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
@@ -349,9 +350,6 @@ you should place your code here."
 
   (global-evil-mc-mode 1)
 
-  (setq jiralib-url "https://sessionm.atlassian.net")
-  (setq org-jira-working-dir "~/workspace/org/jira")
-
   (defvar org-export-output-directory-prefix "export_" "prefix of directory used for org-mode export")
 
   (defadvice org-export-output-file-name (before org-add-export-dir activate)
@@ -377,8 +375,15 @@ you should place your code here."
   (spacemacs/set-leader-keys
     dotspacemacs-emacs-command-key 'helm-M-x)
   (setq create-lockfiles nil)
-  ;; (load "~/Downloads/org-mind-map.el")
-  (define-key evil-org-mode-map (kbd "M m") 'org-mind-map-write)
+
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config)
+
+  ;; Enable custom neotree theme
+  (doom-themes-neotree-config)  ; all-the-icons fonts must be installed!
+
+  ;; Corrects (and improves) org-mode's native fontification.
+  (doom-themes-org-config)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
