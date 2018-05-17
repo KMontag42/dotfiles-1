@@ -87,10 +87,14 @@ values."
                                       (rufo :location (recipe :fetcher github :repo "aleandros/emacs-rufo"))
                                       org-jira
                                       (protobuf-mode :location (recipe :fetcher github :repo "google/protobuf" :files ("editors/protobuf-mode.el")))
+<<<<<<< HEAD
                                       all-the-icons
                                       groovy-mode
                                       ox-rst
                                       prettier-js
+=======
+                                      doom-themes
+>>>>>>> 90457af1903873b55d9f9a6c2a6e5a1e74ecfc68
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -353,10 +357,14 @@ you should place your code here."
 
   (global-evil-mc-mode 1)
 
+<<<<<<< HEAD
   (setq jiralib-url "https://sessionm.atlassian.net")
   (setq org-jira-working-dir "~/workspace/org/jira")
 
   ;; (defvar org-export-output-directory-prefix "export_" "prefix of directory used for org-mode export")
+=======
+  (defvar org-export-output-directory-prefix "export_" "prefix of directory used for org-mode export")
+>>>>>>> 90457af1903873b55d9f9a6c2a6e5a1e74ecfc68
 
   ;; (defadvice org-export-output-file-name (before org-add-export-dir activate)
   ;;   "Modifies org-export to place exported files in a different directory"
@@ -365,13 +373,6 @@ you should place your code here."
   ;;     (when (not (file-directory-p pub-dir))
   ;;       (make-directory pub-dir))))
 
-  ;; (setq prettier-js-args '(
-  ;;                       "--print-width" "100"
-  ;;                       "--jsx-bracket-same-line"
-  ;;                       "--no-semi"
-  ;;                       "--single-quote"
-  ;;                       "--trailing-comma all"
-  ;;                       ))
   (add-hook 'js2-mode-hook 'prettier-js-mode)
   (add-hook 'react-mode-hook 'prettier-js-mode)
   (add-hook 'web-mode-hook 'prettier-js-mode)
@@ -382,6 +383,7 @@ you should place your code here."
   (spacemacs/set-leader-keys
     dotspacemacs-emacs-command-key 'helm-M-x)
   (setq create-lockfiles nil)
+<<<<<<< HEAD
   ;; (load "~/Downloads/org-mind-map.el")
   (use-package emoji-cheat-sheet-plus
     :ensure t
@@ -398,6 +400,17 @@ you should place your code here."
   (doom-themes-neotree-config)
 
   (setq helm-ag-use-agignore t)
+=======
+
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config)
+
+  ;; Enable custom neotree theme
+  (doom-themes-neotree-config)  ; all-the-icons fonts must be installed!
+
+  ;; Corrects (and improves) org-mode's native fontification.
+  (doom-themes-org-config)
+>>>>>>> 90457af1903873b55d9f9a6c2a6e5a1e74ecfc68
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
