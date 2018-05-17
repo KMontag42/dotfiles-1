@@ -58,7 +58,7 @@ export GPG_TTY=$(tty)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export FZF_DEFAULT_OPTS="--preview 'head -100 {}'"
+export FZF_DEFAULT_OPTS="--color dark,hl:33,hl+:37,fg+:235,bg+:136,fg+:254 --color info:254,prompt:37,spinner:108,pointer:235,marker:235"
 
 fo() {
     local out file key
@@ -106,6 +106,12 @@ fbr() {
         branch=$(echo "$branches" |
                      fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
         git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+lastpass() {
+    local passwords
+    passwords=$(lpass ls | fzf | awk '{print $(NF)}' | sed 's/\]//g')
+    lpass show -c --password $passwords
 }
 
 export CLASSPATH=".:/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH"

@@ -1,0 +1,35 @@
+name: Judy
+root: ~/workspace/work/
+
+pre_window: export HIDE_MANAGER_INFO=true
+
+windows:
+  - judy:
+      layout: tiled
+      panes:
+        - server:
+            - cd judy
+            - yarn install
+            - yarn start
+        - tdd:
+            - cd judy
+            - yarn install
+            - yarn tdd
+        - workspace:
+            - cd judy
+            - clear
+  - punch:
+      layout: tiled
+      panes:
+        - server:
+            - cd punch
+            - b
+            - r s -p 6001
+        - tests:
+            - cd punch
+            - b
+            - clear
+            - echo 'test here'
+        - workspace:
+            - cd punch
+            - clear

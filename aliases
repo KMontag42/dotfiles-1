@@ -28,5 +28,8 @@ alias hmi="export HIDE_MANAGER_INFO=true"
 # Show the rvm/nvm info
 alias smi="unset HIDE_MANAGER_INFO"
 
+# stop all running docker containers
+alias ds="docker stop $(docker ps -aq)"
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
