@@ -87,14 +87,12 @@ values."
                                       (rufo :location (recipe :fetcher github :repo "aleandros/emacs-rufo"))
                                       org-jira
                                       (protobuf-mode :location (recipe :fetcher github :repo "google/protobuf" :files ("editors/protobuf-mode.el")))
-<<<<<<< HEAD
                                       all-the-icons
                                       groovy-mode
                                       ox-rst
                                       prettier-js
-=======
                                       doom-themes
->>>>>>> 90457af1903873b55d9f9a6c2a6e5a1e74ecfc68
+                                      graphql-mode
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -357,22 +355,6 @@ you should place your code here."
 
   (global-evil-mc-mode 1)
 
-<<<<<<< HEAD
-  (setq jiralib-url "https://sessionm.atlassian.net")
-  (setq org-jira-working-dir "~/workspace/org/jira")
-
-  ;; (defvar org-export-output-directory-prefix "export_" "prefix of directory used for org-mode export")
-=======
-  (defvar org-export-output-directory-prefix "export_" "prefix of directory used for org-mode export")
->>>>>>> 90457af1903873b55d9f9a6c2a6e5a1e74ecfc68
-
-  ;; (defadvice org-export-output-file-name (before org-add-export-dir activate)
-  ;;   "Modifies org-export to place exported files in a different directory"
-  ;;   (when (not pub-dir)
-  ;;     (setq pub-dir "~/workspace/org/export_html")
-  ;;     (when (not (file-directory-p pub-dir))
-  ;;       (make-directory pub-dir))))
-
   (add-hook 'js2-mode-hook 'prettier-js-mode)
   (add-hook 'react-mode-hook 'prettier-js-mode)
   (add-hook 'web-mode-hook 'prettier-js-mode)
@@ -383,7 +365,6 @@ you should place your code here."
   (spacemacs/set-leader-keys
     dotspacemacs-emacs-command-key 'helm-M-x)
   (setq create-lockfiles nil)
-<<<<<<< HEAD
   ;; (load "~/Downloads/org-mind-map.el")
   (use-package emoji-cheat-sheet-plus
     :ensure t
@@ -400,17 +381,6 @@ you should place your code here."
   (doom-themes-neotree-config)
 
   (setq helm-ag-use-agignore t)
-=======
-
-  ;; Enable flashing mode-line on errors
-  (doom-themes-visual-bell-config)
-
-  ;; Enable custom neotree theme
-  (doom-themes-neotree-config)  ; all-the-icons fonts must be installed!
-
-  ;; Corrects (and improves) org-mode's native fontification.
-  (doom-themes-org-config)
->>>>>>> 90457af1903873b55d9f9a6c2a6e5a1e74ecfc68
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -425,7 +395,7 @@ you should place your code here."
  '(org-babel-load-languages (quote ((js . t) (ruby . t) (shell . t) (emacs-lisp . t))))
  '(package-selected-packages
    (quote
-    (phpunit phpcbf php-extras php-auto-yasnippets drupal-mode php-mode ox-rst groovy-mode doom-themes tide typescript-mode noflet ensime sbt-mode scala-mode toml-mode racer flycheck-rust cargo rust-mode ghub let-alist org-mime protobuf-mode org-brain wakatime-mode slack emojify circe oauth2 websocket ht wgrep smex ivy-hydra counsel-projectile counsel swiper ivy emoji-cheat-sheet-plus company-emoji yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic react-snippets rufo prettier-js nginx-mode csv-mode ox-jira flycheck-pos-tip pos-tip flycheck vimrc-mode dactyl-mode clojure-snippets clj-refactor edn paredit peg cider-eval-sexp-fu cider seq queue clojure-mode unfill mwim org-jira winum fuzzy ac-ispell helm-company helm-c-yasnippet company-web web-completion-data company-tern dash-functional company-statistics company-shell company-go company auto-yasnippet auto-complete go-guru go-eldoc go-mode focus ox-twbs ox-reveal ox-gfm org-projectile org-present org-pomodoro alert log4e gntp org-download htmlize gnuplot lua-mode tern web-mode web-beautify tagedit slim-mode scss-mode sass-mode pug-mode mmm-mode markdown-toc markdown-mode livid-mode skewer-mode simple-httpd less-css-mode json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc helm-css-scss haml-mode gh-md emmet-mode coffee-mode insert-shebang fish-mode yaml-mode smeargle rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv projectile-rails rake inflections orgit org minitest magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link feature-mode evil-magit magit magit-popup git-commit with-editor chruby bundler inf-ruby ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build spacemacs-theme)))
+    (graphql-mode phpunit phpcbf php-extras php-auto-yasnippets drupal-mode php-mode ox-rst groovy-mode doom-themes tide typescript-mode noflet ensime sbt-mode scala-mode toml-mode racer flycheck-rust cargo rust-mode ghub let-alist org-mime protobuf-mode org-brain wakatime-mode slack emojify circe oauth2 websocket ht wgrep smex ivy-hydra counsel-projectile counsel swiper ivy emoji-cheat-sheet-plus company-emoji yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic react-snippets rufo prettier-js nginx-mode csv-mode ox-jira flycheck-pos-tip pos-tip flycheck vimrc-mode dactyl-mode clojure-snippets clj-refactor edn paredit peg cider-eval-sexp-fu cider seq queue clojure-mode unfill mwim org-jira winum fuzzy ac-ispell helm-company helm-c-yasnippet company-web web-completion-data company-tern dash-functional company-statistics company-shell company-go company auto-yasnippet auto-complete go-guru go-eldoc go-mode focus ox-twbs ox-reveal ox-gfm org-projectile org-present org-pomodoro alert log4e gntp org-download htmlize gnuplot lua-mode tern web-mode web-beautify tagedit slim-mode scss-mode sass-mode pug-mode mmm-mode markdown-toc markdown-mode livid-mode skewer-mode simple-httpd less-css-mode json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc helm-css-scss haml-mode gh-md emmet-mode coffee-mode insert-shebang fish-mode yaml-mode smeargle rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv projectile-rails rake inflections orgit org minitest magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link feature-mode evil-magit magit magit-popup git-commit with-editor chruby bundler inf-ruby ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build spacemacs-theme)))
  '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

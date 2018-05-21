@@ -32,7 +32,3 @@
 	name = Kyle Montag
 [tag]
 	forceSignAnnotated = true
-[magit]
-	hideCampaign = true
-[gpg]
-	program = /usr/bin/krgpg
