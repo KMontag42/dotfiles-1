@@ -381,6 +381,9 @@ you should place your code here."
   (doom-themes-neotree-config)
 
   (setq helm-ag-use-agignore t)
+
+  (golden-ratio-mode 1)
+  ;; (setq golden-ratio-auto-scale t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
