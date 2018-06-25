@@ -32,3 +32,5 @@
 	name = Kyle Montag
 [tag]
 	forceSignAnnotated = true
+[gpg]
+	program = /usr/local/bin/krgpg
