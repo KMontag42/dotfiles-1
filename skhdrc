@@ -1,0 +1,46 @@
+# based on using a hyper key instead of boring old caps lock.
+# also uses a Meh key in some situations since _true_ hyper isn't possible
+# on plebian os x frown.
+
+# enter fullscreen mode for the focused container
+ctrl + shift + cmd + alt - f : chunkc tiling::window --toggle fullscreen
+
+# change focus between tiling / floating windows
+ctrl + shift + cmd + alt - space : chunkc tiling::window --toggle float
+
+# change layout of desktop
+ctrl + shift + cmd + alt - e : chunkc tiling::desktop --layout bsp
+ctrl + shift + cmd + alt - s : chunkc tiling::desktop --layout monocle
+
+# kill focused window
+ctrl + shift + cmd + alt - q : chunkc tiling::window --close
+
+# change focus
+ctrl + shift + cmd + alt - h : chunkc tiling::window --focus west
+ctrl + shift + cmd + alt - j : chunkc tiling::window --focus south
+ctrl + shift + cmd + alt - k : chunkc tiling::window --focus north
+ctrl + shift + cmd + alt - l : chunkc tiling::window --focus east
+
+ctrl + shift + cmd + alt - left : chunkc tiling::window --focus west
+ctrl + shift + cmd + alt - down : chunkc tiling::window --focus south
+ctrl + shift + cmd + alt - up : chunkc tiling::window --focus north
+ctrl + shift + cmd + alt - right : chunkc tiling::window --focus east
+
+# move focused window
+ctrl + shift + alt - h : chunkc tiling::window --warp west
+ctrl + shift + alt - j : chunkc tiling::window --warp south
+ctrl + shift + alt - k : chunkc tiling::window --warp north
+ctrl + shift + alt - l : chunkc tiling::window --warp east
+
+ctrl + shift + alt - left : chunkc tiling::window --warp west
+ctrl + shift + alt - down : chunkc tiling::window --warp south
+ctrl + shift + alt - up : chunkc tiling::window --warp north
+ctrl + shift + alt - right : chunkc tiling::window --warp east
+
+# move focused container to workspace
+ctrl + shift + alt - 1 : chunkc tiling::window --send-to-desktop 1
+ctrl + shift + alt - 2 : chunkc tiling::window --send-to-desktop 2
+ctrl + shift + alt - 3 : chunkc tiling::window --send-to-desktop 3
+ctrl + shift + alt - 4 : chunkc tiling::window --send-to-desktop 4
+ctrl + shift + alt - 5 : chunkc tiling::window --send-to-desktop 5
+ctrl + shift + alt - 6 : chunkc tiling::window --send-to-desktop 6
