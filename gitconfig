@@ -28,7 +28,7 @@
 [include]
   path = ~/.gitconfig.local
 [user]
-	email = thekylemontag@gmail.com
+	email = kmontag@salsify.com
 	name = Kyle Montag
 [tag]
 	forceSignAnnotated = true

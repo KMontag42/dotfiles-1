@@ -17,10 +17,9 @@ alias r="rails"
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
-alias tmls="tmux list-session"
-alias tma="tmux -2 attach -t $1"
-alias tmk="tmux kill-session -t $1"
+alias tsw="tmux switch -t $1"
 alias mux="tmuxinator $1"
+alias muxify="mux start salsify-ruby $1"
 
 # Hide the rvm/nvm info
 alias hmi="export HIDE_MANAGER_INFO=true"

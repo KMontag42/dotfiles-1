@@ -1,0 +1,22 @@
+name: con-walmart
+root: ~/workspace/salsify/con-walmart
+
+windows:
+  - general:
+      layout: main-vertical
+      panes:
+        - misc:
+            - clear
+        - logs:
+            - clear
+            - tail -f log/development.log
+  - foreman:
+      layout: main-vertical
+      panes:
+        - main:
+            - be foreman start
+  - rails-console:
+      layout: main-vertical
+      panes:
+        - main:
+            - rails c

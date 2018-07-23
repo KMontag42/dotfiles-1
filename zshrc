@@ -44,3 +44,6 @@ _load_settings "$HOME/.zsh/configs"
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+
+# Added by Krypton
+export GPG_TTY=$(tty)

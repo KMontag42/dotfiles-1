@@ -45,20 +45,13 @@ values."
      lua
      shell-scripts
      yaml
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
      helm
-     ;; ivy
      (auto-completion :variables
                       auto-completion-return-key-behavior nil
                       auto-completion-tab-key-behavior 'complete)
-     ;; better-defaults
      emacs-lisp
      git
-     (ruby :variables ruby-version-manager 'rbenv)
+     (ruby :variables ruby-version-manager 'rvm)
      ruby-on-rails
      markdown
      javascript
@@ -67,16 +60,7 @@ values."
           org-enable-github-support t
           org-enable-bootstrap-support t
           org-enable-reveal-js-support t)
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
      (syntax-checking :variables flycheck-disabled-checkers '(ruby-rubocop))
-     ;; (wakatime :variables
-     ;;           wakatime-api-key  "e3d09815-41a7-4b67-ad28-bd03e10464ea"
-     ;;           ;; use the actual wakatime path
-     ;;           wakatime-cli-path "/home/kmontag/.local/bin/wakatime")
-     ;; version-control
      scala
      )
    ;; List of additional packages that will be installed without being
@@ -321,7 +305,7 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup 'trailing
+   dotspacemacs-whitespace-cleanup 'nil
    ))
 
 (defun dotspacemacs/user-init ()
@@ -350,6 +334,7 @@ you should place your code here."
                                   "DONE")))
   (setq exec-path (append exec-path '("/usr/local/bin")))
   (setq org-directory "~/workspace/org")
+  (setq org-agenda-files '("~/workspace/org"))
 
   (add-to-list 'auto-mode-alist '("Jenkinsfile" . groovy-mode))
 
@@ -357,7 +342,7 @@ you should place your code here."
 
   (add-hook 'js2-mode-hook 'prettier-js-mode)
   (add-hook 'react-mode-hook 'prettier-js-mode)
-  (add-hook 'web-mode-hook 'prettier-js-mode)
+  ;; (add-hook 'web-mode-hook 'prettier-js-mode)
 
   (setq-default js2-basic-offset 2)
   (setq-default tab-width 2)
@@ -382,8 +367,7 @@ you should place your code here."
 
   (setq helm-ag-use-agignore t)
 
-  (golden-ratio-mode 1)
-  ;; (setq golden-ratio-auto-scale t)
+  (setq ruby-insert-encoding-magic-comment nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -396,12 +380,15 @@ you should place your code here."
  '(ansi-color-names-vector
    ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
  '(evil-want-Y-yank-to-eol nil)
- '(org-agenda-files (quote ("~/workspace/orgfiles")))
+ '(org-agenda-files
+   (quote
+    ("~/workspace/org/random.org" "~/workspace/org/TODOs.org")))
  '(org-babel-load-languages (quote ((js . t) (ruby . t) (shell . t) (emacs-lisp . t))))
  '(package-selected-packages
    (quote
     (org-category-capture graphql-mode phpunit phpcbf php-extras php-auto-yasnippets drupal-mode php-mode ox-rst groovy-mode doom-themes tide typescript-mode noflet ensime sbt-mode scala-mode toml-mode racer flycheck-rust cargo rust-mode ghub let-alist org-mime protobuf-mode org-brain wakatime-mode slack emojify circe oauth2 websocket ht wgrep smex ivy-hydra counsel-projectile counsel swiper ivy emoji-cheat-sheet-plus company-emoji yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic react-snippets rufo prettier-js nginx-mode csv-mode ox-jira flycheck-pos-tip pos-tip flycheck vimrc-mode dactyl-mode clojure-snippets clj-refactor edn paredit peg cider-eval-sexp-fu cider seq queue clojure-mode unfill mwim org-jira winum fuzzy ac-ispell helm-company helm-c-yasnippet company-web web-completion-data company-tern dash-functional company-statistics company-shell company-go company auto-yasnippet auto-complete go-guru go-eldoc go-mode focus ox-twbs ox-reveal ox-gfm org-projectile org-present org-pomodoro alert log4e gntp org-download htmlize gnuplot lua-mode tern web-mode web-beautify tagedit slim-mode scss-mode sass-mode pug-mode mmm-mode markdown-toc markdown-mode livid-mode skewer-mode simple-httpd less-css-mode json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc helm-css-scss haml-mode gh-md emmet-mode coffee-mode insert-shebang fish-mode yaml-mode smeargle rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv projectile-rails rake inflections orgit org minitest magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link feature-mode evil-magit magit magit-popup git-commit with-editor chruby bundler inf-ruby ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build spacemacs-theme)))
- '(paradox-github-token t))
+ '(paradox-github-token t)
+ '(prettier-js-show-errors (quote echo)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
