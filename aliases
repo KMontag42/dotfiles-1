@@ -19,7 +19,7 @@ alias path='echo $PATH | tr -s ":" "\n"'
 
 alias tsw="tmux switch -t $1"
 alias mux="tmuxinator $1"
-alias muxify="mux start salsify-ruby $1"
+alias muxify="mux start salsify $1"
 
 # Hide the rvm/nvm info
 alias hmi="export HIDE_MANAGER_INFO=true"

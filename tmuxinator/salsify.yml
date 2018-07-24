@@ -1,0 +1,62 @@
+<%
+  name = @args.first
+  abort("please provide the name of the project") if name.nil? or name.empty?
+  platform = ''
+  if File.exist?("/Users/kylemontag/workspace/salsify/#{name}/Gemfile")
+    platform = :ruby
+  elsif File.exist?("/Users/kylemontag/workspace/salsify/#{name}/package.json")
+    platform = :js
+  else
+    abort("Project is not of a supported type")
+  end
+%>
+
+<%
+  windows = {
+  ruby: %{
+  - general:
+      layout: main-vertical
+      panes:
+        - main:
+            - clear
+        - logs:
+            - clear
+            - tail -f log/development.log
+        - guard:
+            - clear
+            - guard
+  - foreman:
+      layout: main-vertical
+      panes:
+        - main:
+            - be foreman start
+  - rails-console:
+      layout: main-vertical
+      panes:
+        - main:
+            - rails c
+  },
+  js: %{
+  - general:
+      layout: main-vertical
+      panes:
+        - main:
+            - clear
+        - tdd:
+            - clear
+            - yarn test:watch
+  - server:
+      layout: main-vertical
+      panes:
+        - main:
+            - yarn start
+  }
+}
+%>
+
+name: <%= name %>
+root: ~/workspace/salsify/<%= name %>
+
+windows:
+  <%= windows[platform] %>
+

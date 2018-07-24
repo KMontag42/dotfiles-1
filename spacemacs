@@ -342,9 +342,10 @@ you should place your code here."
 
   (add-hook 'js2-mode-hook 'prettier-js-mode)
   (add-hook 'react-mode-hook 'prettier-js-mode)
-  ;; (add-hook 'web-mode-hook 'prettier-js-mode)
+  (add-hook 'web-mode-hook 'prettier-js-mode)
 
   (setq-default js2-basic-offset 2)
+  (setq-default js-indent-level 2)
   (setq-default tab-width 2)
 
   (spacemacs/set-leader-keys
